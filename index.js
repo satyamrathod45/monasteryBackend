@@ -22,6 +22,9 @@ mongoose.connect(mongodbURL)
 .catch(err => console.error(err));
 
 
-app.listen(PORT || 8000, "0.0.0.0", () => {
-  console.log(`Server running on port ${PORT}`);
+// ===== START SERVER =====
+const port = process.env.PORT || PORT;
+
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Server running on port ${port}`);
 });
